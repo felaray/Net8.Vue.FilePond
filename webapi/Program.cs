@@ -1,4 +1,12 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using webapi.Data;
 var builder = WebApplication.CreateBuilder(args);
+//in memory db
+builder.Services.AddDbContext<webapiContext>(options =>
+    options.UseInMemoryDatabase("webapi"));
+
+builder.Services.AddControllers();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -36,6 +44,13 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast")
 .WithOpenApi();
 
+//reg controllers
+app.MapControllers();
+//cors
+app.UseCors(x => x
+    .AllowAnyOrigin()
+       .AllowAnyMethod()
+          .AllowAnyHeader());
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)

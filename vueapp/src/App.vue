@@ -1,5 +1,7 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import TheWelcome from './components/TheWelcome.vue'
+import file from './components/file.vue'
 </script>
 
 <template>
@@ -12,7 +14,8 @@ import HelloWorld from './components/HelloWorld.vue'
   </header>
 
   <main>
-    <TheWelcome />
+    <!-- <TheWelcome /> -->
+    <file />
   </main>
 </template>
 

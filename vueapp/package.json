@@ -10,7 +10,11 @@
     "predev": "node aspnetcore-https.js"
   },
   "dependencies": {
-    "vue": "^3.3.4"
+    "filepond": "^4.30.4",
+    "filepond-plugin-file-validate-type": "^1.2.8",
+    "filepond-plugin-image-preview": "^4.6.11",
+    "vue": "^3.3.4",
+    "vue-filepond": "^7.0.4"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.4.0",
